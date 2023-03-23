@@ -1,0 +1,25 @@
+name: Test Workflow
+on: [workflow_dispatch]
+jobs:
+  example:
+    name: Test Job
+    runs-on: self-hosted
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+      - name: Display file system
+        run: ls -altr
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.3.0
+      - name: Display Terraform version
+        run: terraform -v
+      - uses: elstudio/action-install-azure-cli@v1
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - run: |
+          az group list 
+          ls -al

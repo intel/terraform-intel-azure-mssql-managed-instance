@@ -12,7 +12,10 @@
 
 ## Usage
 
-See examples folder for code ./examples/intel-optimized-postgresql-server/main.tf
+More information can be found at https://azure.microsoft.com/en-us/pricing/details/azure-sql-managed-instance/single/
+
+
+See examples folder for code ./examples/intel-optimized-azure-mssql-managed-server/main.tf
 
 Example of main.tf
 

@@ -7,14 +7,14 @@ variable "sku_name" {
   default     = "GP_Gen5"
 }
 
-variable "storage_size_gb" {
+variable "storage_size_in_gb" {
   description = "The size of storage to be configured on the virtual machine"
   type        = number
   default     = 256
 }
 
 variable "vcore_count" {
-  description = ""
+  description = "Number of cores that should be assigned to the SQL Managed Instance. Values can be 8, 16, or 24 for Gen4 SKUs, or 4, 8, 16, 24, 32, 40, 64, or 80 for Gen5 SKUs."
   type        = number
   default     = 8
 }
@@ -29,11 +29,6 @@ variable "license_type" {
   type        = string
   default     = "LicenseIncluded"
 }
-# variable "subnet_id" {
-#   description = "The subnet resource id that the SQL Managed instance will be associated with."
-#   type        = string
-#   default     = null
-# }
 
 
 
@@ -44,7 +39,7 @@ variable "license_type" {
 variable "administrator_login" {
   description = "The administrator login name for the new server"
   type        = string
-  default     = "_ccedbg"
+  default     = "sqladmin"
 }
 
 variable "administrator_login_password" {
@@ -62,6 +57,13 @@ variable "azurerm_resource_group_name" {
   type        = string
   default     = "kinder-testing"
 }
+
+variable "azurerm_resource_group_name_failover" {
+  description = "Name of the resource group to be imported in the secondary location"
+  type        = string
+  default     = "testingkw"
+}
+
 
 variable "azurerm_virtual_network_name" {
   description = "Name of the preconfigured virtual network"
@@ -96,7 +98,7 @@ variable "tags" {
   description = "A mapping of tags to assign to the resource"
   type        = map(any)
   default = {
-    owner    = "owner@company.com"
+    owner    = "kinder.wischmeier@intel.com"
     duration = "4"
   }
 }

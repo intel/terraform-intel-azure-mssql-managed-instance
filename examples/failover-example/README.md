@@ -7,12 +7,13 @@
 
 © Copyright 2022, Intel Corporation
 
-## Azure MSSQL Managed Instance
-The module can deploy an Intel Optimized Azure MSSQL Managed Instance. Instance Selection and Intel Optimizations have been defaulted in the code.
+## Azure MSSQL Managed Instance Failover Group Example
+The example provisions two Intel Optimized Azure MSSQL Managed Instances in two different regions. The primary instance uses the preconfigured resource group, virtual network, and subnet in the region useast. The preconfigured subnet in the preconfigured virtual network has been delegated the The secondary instance uses the resource group, virtual network, subnet, subnet network security group, and subnet route table association that are being created in the module. The Instance Selection and Intel Optimizations have been defaulted in the code.
+
+
+More information can be found here: [Azure MSSQL Managed Instance Failover Group](<https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_managed_instance_failover_group>)
 
 The code selects Premium Series Gen5 based on the Intel(R) Xeon Scalable 2.8 GHz processor (Ice Lake) processors.
-
-This module uses a predefined resource group, virtual network, subnet, and network security group. 
 
 ## Important Notice
 <img src="./images\important_notice_mssql_managed_instance.png?raw=true" alt="Important Notice" width="600"/>
@@ -42,7 +43,7 @@ Example of main.tf
 
 # main.tf
 module "optimized-mssql-managed-instance" {
-  vm_name                         = "terraformtestingexample"
+  vm_name                      = "terraformtestingexample"
   source                       = "../../"
   administrator_login_password = var.administrator_login_password
   resource_group_name          = "kinder-testing"
@@ -72,12 +73,12 @@ Note that this example may create resources. Run `terraform destroy` when you do
 
 ## Considerations  
 
+It is important to either create or associate a predefined a route table to a SQL managed instance subnet that will be associated with the network security group. More details can be found here: https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/vnet-existing-add-subnet?view=azuresql
+
 More information about pricing and sku types can be found at: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_managed_instance.
 
 It is important to choose the sku types and vcore options based off of the Terraform documentation and not the pricing calculator because those are the only options that the Azure provider supports.
 
-
-It is important to either create or associate a predefined a route table to a SQL managed instance subnet that will be associated with the network security group. More details can be found here: https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/vnet-existing-add-subnet?view=azuresql
 
 
 

@@ -35,14 +35,4 @@ resource "azurerm_mssql_managed_instance" "mssql_managed_instance" {
     create = "6h"
     delete = "1h"
   }
-
-  # dynamic "azuread_administrator" {
-  #   for_each = length(var.azuread_input_variables) == 0 ? toset([]) : var.azuread_input_variables
-  #   content {
-  #     login_username              = azuread_administrator.value["azuread_login_username"]
-  #     object_id                   = azuread_administrator.value["azuread_object_id"]
-  #     azuread_authentication_only = azuread_administrator.value["azuread_authentication_only"]
-  #   }
-
-  # }
 }

@@ -2,7 +2,6 @@
   <img src="./images/logo-classicblue-800px.png" alt="Intel Logo" width="250"/>
 </p>
 
-
 # Intel® Cloud Optimization Modules for Terraform
 
 © Copyright 2022, Intel Corporation
@@ -29,18 +28,21 @@ Example of main.tf
 # Example of how to pass variable for instance password:
 # terraform apply -var="administrator_login_password=..."
 # Environment variables can also be used https://www.terraform.io/language/values/variables#environment-variables
+```
 
 # Provision Intel Cloud Optimization Module
 
-# variables.tf
-
+variables.tf
+```hcl
   variable "administrator_login_password" {
   description = "Password for the admin login user."
   type        = string
   sensitive   = true
 }
+```
 
-# main.tf
+main.tf
+```hcl
 module "optimized-mssql-managed-instance" {
   name                         = "terraformtestingexample"
   source                       = "../../"
@@ -54,7 +56,6 @@ module "optimized-mssql-managed-instance" {
     duration    = "4"
   }
 }
-
 ```
 
 Run Terraform

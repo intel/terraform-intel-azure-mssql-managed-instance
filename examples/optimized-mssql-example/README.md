@@ -8,7 +8,7 @@
 © Copyright 2022, Intel Corporation
 
 ## Azure MSSQL Managed Instance
-The module can deploy an Intel Optimized Azure MSSQL Managed Instance. Instance Selection and Intel Optimizations have been defaulted in the code.
+The example deploys an Intel Optimized Azure MSSQL Managed Instance. Instance Selection and Intel Optimizations have been defaulted in the code.
 
 The code selects Premium Series Gen5 based on the Intel(R) Xeon Scalable 2.8 GHz processor (Ice Lake) processors.
 

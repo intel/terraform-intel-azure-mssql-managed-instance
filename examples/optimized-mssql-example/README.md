@@ -7,7 +7,7 @@
 
 © Copyright 2022, Intel Corporation
 
-## Azure MSSQL Managed Instance
+## Azure MSSQL Intel Optimized Managed Instance 
 The example deploys an Intel Optimized Azure MSSQL Managed Instance. Instance Selection and Intel Optimizations have been defaulted in the code.
 
 The code selects Premium Series Gen5 based on the Intel(R) Xeon Scalable 2.8 GHz processor (Ice Lake) processors.
@@ -45,7 +45,7 @@ module "optimized-mssql-managed-instance" {
   name                         = "terraformtestingexample"
   source                       = "../../"
   administrator_login_password = var.administrator_login_password
-  resource_group_name          = "kinder-testing"
+  resource_group_name          = "<ENTER_RESOURCE_GROUP_NAME>
   license_type                 = "BasePrice"
   sku_name                     = "GP_Gen5"
   storage_size_in_gb           = 32

@@ -19,7 +19,7 @@ data "azurerm_network_security_group" "nsg" {
 }
 
 resource "azurerm_mssql_managed_instance" "mssql_managed_instance" {
-  name                         = var.vm_name
+  name                         = var.mi_name
   location                     = data.azurerm_resource_group.rg.location
   resource_group_name          = var.azurerm_resource_group_name
   administrator_login          = var.administrator_login

@@ -1,6 +1,13 @@
 ########################
 ####     Intel      ####
 ########################
+
+# See policies.md, we recommend  Intel Xeon 3rd Generation Scalable processors (code-named Ice Lake)
+# General Purpose: Gen5_v4, Gen5_v8, Gen5_v16, Gen5_v16, Gen5_v24, Gen5_v32, Gen5_v40, Gen5_v64, Gen5_v80, G8IM_v4, G8IM_v8, G8IM_v16, G8IM_v24, G8IM_v32, G8IM_v40, G8IM_v64, G8IM_v80, G8IH_v4, G8IH_v4, G8IH_v8, G8IH_v16, G8IH_v24, G8IH_v32, G8IH_v40, G8IH_v64
+# Memory Optimized: Gen5_v4, Gen5_v8, Gen5_v16, Gen5_v16, Gen5_v24, Gen5_v32, Gen5_v40, Gen5_v64, Gen5_v80, G8IM_v4, G8IM_v8, G8IM_v16, G8IM_v24, G8IM_v32, G8IM_v40, G8IM_v64, G8IM_v80, G8IH_v4, G8IH_v4, G8IH_v8, G8IH_v16, G8IH_v24, G8IH_v32, G8IH_v40, G8IH_v64
+# See more:
+# https://learn.microsoft.com/en-us/azure/azure-sql/database/service-tiers-sql-database-vcore?view=azuresql-db
+# https://azure.microsoft.com/en-us/pricing/details/azure-sql-managed-instance/single/
 variable "sku_name" {
   description = "The SKU that will be configured for the provisioned virtual machine"
   type        = string
@@ -19,18 +26,11 @@ variable "vcore_count" {
   default     = 8
 }
 
-variable "edition" {
-  description = ""
-  type        = string
-  default     = "GeneralPurpose"
-}
 variable "license_type" {
   description = ""
   type        = string
   default     = "LicenseIncluded"
 }
-
-
 
 ########################
 ####    Required    ####
@@ -39,7 +39,6 @@ variable "license_type" {
 variable "administrator_login" {
   description = "The administrator login name for the new server"
   type        = string
-  default     = "sqladmin"
 }
 
 variable "administrator_login_password" {
@@ -55,50 +54,40 @@ variable "administrator_login_password" {
 variable "azurerm_resource_group_name" {
   description = "Name of the resource group to be imported"
   type        = string
-  default     = "kinder-testing"
-}
-
-variable "azurerm_resource_group_name_failover" {
-  description = "Name of the resource group to be imported in the secondary location"
-  type        = string
-  default     = "testingkw"
 }
 
 
 variable "azurerm_virtual_network_name" {
   description = "Name of the preconfigured virtual network"
   type        = string
-  default     = "kinder-testing"
 }
 
 variable "azurerm_subnet_name" {
   description = "The name of the preconfigured subnet"
   type        = string
-  default     = "default"
 
 }
 
 variable "nsg_name" {
-  description = ""
+  description = "The name of the network security group to be imported"
   type        = string
-  default     = "kinder-testing"
+}
+
+variable "mi_name" {
+  description = "The name of the managed instance to be created"
+  type        = string
 }
 
 ########################
 ####     Other      ####
 ########################
 
-variable "vm_name" {
-  description = "The unique name of the Linux virtual machine"
-  type        = string
-  default     = "vm1"
-}
 
 variable "tags" {
   description = "A mapping of tags to assign to the resource"
   type        = map(any)
   default = {
-    owner    = "kinder.wischmeier@intel.com"
+    owner    = "owner@company.com"
     duration = "4"
   }
 }

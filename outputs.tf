@@ -1,6 +1,3 @@
-########################
-####     General    ####
-########################
 output "resource_group_name" {
   description = "The resource group where the instance resides"
   value       = data.azurerm_resource_group.rg.id
@@ -63,20 +60,5 @@ output "tags" {
   description = "The tags associated with the instance"
   value       = azurerm_mssql_managed_instance.mssql_managed_instance.tags
 }
-
-
-
-
-########################
-#### Authentication ####
-########################
-
-###########################
-#### High Availablilty ####
-###########################
-
-########################
-####    Storage     ####
-########################
 
 

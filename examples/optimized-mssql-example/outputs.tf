@@ -12,8 +12,6 @@ output "subnet_id" {
   description = "ID of the preconfigured subnet"
   value       = data.azurerm_subnet.subnet.id
 }
-
-
 output "sku_name" {
   description = "Instance SKU in use for the managed instance that was created"
   value       = azurerm_mssql_managed_instance.optimized-mssql-managed-instance.sku_name
@@ -26,12 +24,12 @@ output "license_type" {
 
 output "vcores" {
   description = "Number of vcores on the managed instance "
-  value       = azurerm_mssql_managed_instance.optimized-mssql-managed-instance.vcores
+  value       = azurerm_mssql_managed_instance.optimized-mssql-managed-instance.vcore_count
 }
 
 output "name" {
   description = "The name of the mssql managed instance"
-  value       = azurerm_mssql_managed_instance.optimized-mssql-managed-instance.name
+  value       = azurerm_mssql_managed_instance.optimized-mssql-managed-instance.mi_name
 }
 
 output "storage_size_in_gb" {

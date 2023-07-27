@@ -1,7 +1,6 @@
 ########################
 ####     Intel      ####
 ########################
-
 # See policies.md, we recommend  Intel Xeon 3rd Generation Scalable processors (code-named Ice Lake)
 # General Purpose: Gen5_v4, Gen5_v8, Gen5_v16, Gen5_v16, Gen5_v24, Gen5_v32, Gen5_v40, Gen5_v64, Gen5_v80, G8IM_v4, G8IM_v8, G8IM_v16, G8IM_v24, G8IM_v32, G8IM_v40, G8IM_v64, G8IM_v80, G8IH_v4, G8IH_v4, G8IH_v8, G8IH_v16, G8IH_v24, G8IH_v32, G8IH_v40, G8IH_v64
 # Memory Optimized: Gen5_v4, Gen5_v8, Gen5_v16, Gen5_v16, Gen5_v24, Gen5_v32, Gen5_v40, Gen5_v64, Gen5_v80, G8IM_v4, G8IM_v8, G8IM_v16, G8IM_v24, G8IM_v32, G8IM_v40, G8IM_v64, G8IM_v80, G8IH_v4, G8IH_v4, G8IH_v8, G8IH_v16, G8IH_v24, G8IH_v32, G8IH_v40, G8IH_v64
@@ -9,13 +8,13 @@
 # https://learn.microsoft.com/en-us/azure/azure-sql/database/service-tiers-sql-database-vcore?view=azuresql-db
 # https://azure.microsoft.com/en-us/pricing/details/azure-sql-managed-instance/single/
 variable "sku_name" {
-  description = "The SKU that will be configured for the provisioned virtual machine"
+  description = "The SKU that will be configured for the provisioned virtual machine. Possible values are GP_Gen4, GP_Gen5, GP_Gen8IM, GP_Gen8IH, BC_Gen4, BC_Gen5, BC_Gen8IM or BC_Gen8IH"
   type        = string
   default     = "GP_Gen5"
 }
 
 variable "storage_size_in_gb" {
-  description = "The size of storage to be configured on the virtual machine"
+  description = "The maximum size of storage to be configured on the virtual machine. This should be a multiple of 32 GB"
   type        = number
   default     = 256
 }
@@ -27,7 +26,7 @@ variable "vcore_count" {
 }
 
 variable "license_type" {
-  description = ""
+  description = "What type of license the managed instance will use. Possible values are LicenseIncluded and BasePrice"
   type        = string
   default     = "LicenseIncluded"
 }

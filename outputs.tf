@@ -48,6 +48,11 @@ output "location" {
   value       = azurerm_mssql_managed_instance.mssql_managed_instance.location
 }
 
+output "managed_instance_id" {
+  description = "The ID of the managed instance"
+  value       = azurerm_mssql_managed_instance.mssql_managed_instance.id
+}
+
 output "storage_size_in_gb" {
   description = "The number of GBs associated with the instance"
   value       = azurerm_mssql_managed_instance.mssql_managed_instance.storage_size_in_gb

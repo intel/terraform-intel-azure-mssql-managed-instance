@@ -98,3 +98,67 @@ It is important to either create or associate a predefined a route table to a SQ
 
 
 
+
+<!-- BEGIN_TF_DOCS -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~>3.41.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~>3.41.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [azurerm_mssql_managed_instance.mssql_managed_instance](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_managed_instance) | resource |
+| [azurerm_network_security_group.nsg](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/network_security_group) | data source |
+| [azurerm_resource_group.rg](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
+| [azurerm_subnet.subnet](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subnet) | data source |
+| [azurerm_virtual_network.vnet](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/virtual_network) | data source |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_administrator_login"></a> [administrator\_login](#input\_administrator\_login) | The administrator login name for the new server | `string` | n/a | yes |
+| <a name="input_administrator_login_password"></a> [administrator\_login\_password](#input\_administrator\_login\_password) | The password associated with the administrator\_login user | `string` | n/a | yes |
+| <a name="input_azurerm_resource_group_name"></a> [azurerm\_resource\_group\_name](#input\_azurerm\_resource\_group\_name) | Name of the resource group to be imported | `string` | n/a | yes |
+| <a name="input_azurerm_subnet_name"></a> [azurerm\_subnet\_name](#input\_azurerm\_subnet\_name) | The name of the preconfigured subnet | `string` | n/a | yes |
+| <a name="input_azurerm_virtual_network_name"></a> [azurerm\_virtual\_network\_name](#input\_azurerm\_virtual\_network\_name) | Name of the preconfigured virtual network | `string` | n/a | yes |
+| <a name="input_license_type"></a> [license\_type](#input\_license\_type) | What type of license the managed instance will use. Possible values are LicenseIncluded and BasePrice | `string` | `"LicenseIncluded"` | no |
+| <a name="input_mi_name"></a> [mi\_name](#input\_mi\_name) | The name of the managed instance to be created | `string` | n/a | yes |
+| <a name="input_nsg_name"></a> [nsg\_name](#input\_nsg\_name) | The name of the network security group to be imported | `string` | n/a | yes |
+| <a name="input_sku_name"></a> [sku\_name](#input\_sku\_name) | The SKU that will be configured for the provisioned virtual machine. Possible values are GP\_Gen4, GP\_Gen5, GP\_Gen8IM, GP\_Gen8IH, BC\_Gen4, BC\_Gen5, BC\_Gen8IM or BC\_Gen8IH | `string` | `"GP_Gen5"` | no |
+| <a name="input_storage_size_in_gb"></a> [storage\_size\_in\_gb](#input\_storage\_size\_in\_gb) | The maximum size of storage to be configured on the virtual machine. This should be a multiple of 32 GB | `number` | `256` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | A mapping of tags to assign to the resource | `map(any)` | <pre>{<br>  "duration": "4",<br>  "owner": "owner@company.com"<br>}</pre> | no |
+| <a name="input_vcore_count"></a> [vcore\_count](#input\_vcore\_count) | Number of cores that should be assigned to the SQL Managed Instance. Values can be 8, 16, or 24 for Gen4 SKUs, or 4, 8, 16, 24, 32, 40, 64, or 80 for Gen5 SKUs. | `number` | `8` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_administrator_login"></a> [administrator\_login](#output\_administrator\_login) | MSSQL managed instance administrator username |
+| <a name="output_license_type"></a> [license\_type](#output\_license\_type) | The type of license the instance used |
+| <a name="output_location"></a> [location](#output\_location) | Location where the virtual machine will be created |
+| <a name="output_managed_instance_id"></a> [managed\_instance\_id](#output\_managed\_instance\_id) | The ID of the managed instance |
+| <a name="output_network_security_group_id"></a> [network\_security\_group\_id](#output\_network\_security\_group\_id) | The ID of the preconfigured virtual network |
+| <a name="output_resource_group_name"></a> [resource\_group\_name](#output\_resource\_group\_name) | The resource group where the instance resides |
+| <a name="output_sku_name"></a> [sku\_name](#output\_sku\_name) | Instance SKU in use for the managed instance that was created |
+| <a name="output_storage_size_in_gb"></a> [storage\_size\_in\_gb](#output\_storage\_size\_in\_gb) | The number of GBs associated with the instance |
+| <a name="output_subnet_id"></a> [subnet\_id](#output\_subnet\_id) | The ID of the preconfigured subnet |
+| <a name="output_tags"></a> [tags](#output\_tags) | The tags associated with the instance |
+| <a name="output_timeouts"></a> [timeouts](#output\_timeouts) | The timeout constraints associated with the instance if configured |
+| <a name="output_vcores"></a> [vcores](#output\_vcores) | Number of vcores on the managed instance |
+| <a name="output_virtual_network_id"></a> [virtual\_network\_id](#output\_virtual\_network\_id) | The ID of the preconfigured virtual network |
+| <a name="output_vm_name"></a> [vm\_name](#output\_vm\_name) | The name of the instance being created |
+<!-- END_TF_DOCS -->

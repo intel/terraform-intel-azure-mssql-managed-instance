@@ -23,15 +23,12 @@ More information can be found [Overview of Azure SQL Managed Instance management
 
 #### [Get up to 37% More SQL Server OLTP Performance by Selecting Premium Series Microsoft Azure SQL Managed Instance VMs With 3rd Gen Intel Xeon Scalable Processors](https://www.intel.com/content/www/us/en/content-details/755166/get-up-to-37-more-sql-server-oltp-performance-by-selecting-premium-series-microsoft-azure-sql-managed-instance-vms-with-3rd-gen-intel-xeon-scalable-processors.html)
 
-<p align="center">
-  <img src="./images/perfdata.png" alt="Normalized 16 vCPU MS SQL NOPM" width="150"/>
-</p>
+
+<img src="images\perfdata1.png" alt="Normalized 16 vCPU MS SQL NOPM" width="350"/>
 
 #
+<img src="images\perfdata2.png" alt="Normalized 8 vCPU MS SQL NOPM" width="350"/>
 
-<p align="center">
-  <img src="./images/perfdata2.png" alt="Normalized 8 vCPU MS SQL NOPM" width="150"/>
-</p>
 
 
 

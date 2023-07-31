@@ -19,6 +19,23 @@ This module uses a predefined resource group, virtual network, subnet, and netwo
 ## **Provisioning an Azure MSSQL Managed Instance can take up to 6 hours!**
 More information can be found [Overview of Azure SQL Managed Instance management operations.](https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/management-operations-overview?view=azuresql)
 
+## Performance Data
+
+#### [Get up to 37% More SQL Server OLTP Performance by Selecting Premium Series Microsoft Azure SQL Managed Instance VMs With 3rd Gen Intel Xeon Scalable Processors](https://www.intel.com/content/www/us/en/content-details/755166/get-up-to-37-more-sql-server-oltp-performance-by-selecting-premium-series-microsoft-azure-sql-managed-instance-vms-with-3rd-gen-intel-xeon-scalable-processors.html)
+
+<p align="center">
+  <img src="./images/perfdata.png" alt="Normalized 16 vCPU MS SQL NOPM" width="150"/>
+</p>
+
+#
+
+<p align="center">
+  <img src="./images/perfdata2.png" alt="Normalized 8 vCPU MS SQL NOPM" width="150"/>
+</p>
+
+
+
+
 ## Usage
 See examples folder for code ./examples/intel-optimized-azure-mssql-managed-server/main.tf
 

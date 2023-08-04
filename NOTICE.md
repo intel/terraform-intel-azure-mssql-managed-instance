@@ -1,5 +1,9 @@
 © Copyright 2022, Intel Corporation
 
+Credit:
+
+"This project incorporates code from https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_managed_instance"
+
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at

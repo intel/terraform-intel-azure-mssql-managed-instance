@@ -14,7 +14,7 @@ The instance is pre-configured with parameters within the database parameter gro
 This module uses a predefined resource group, virtual network, subnet, and network security group. 
 
 ## Important Notice
-<img src="./images\important_notice_mssql_managed_instance.png?raw=true" alt="Important Notice" width="600"/>
+<img src="https://github.com/intel/terraform-intel-azure-mssql-managed-instance/blob/main/images/important_notice_mssql_managed_instance.png?raw=true" alt="Important Notice" width="600"/>
 
 ## **Provisioning an Azure MSSQL Managed Instance can take up to 6 hours!**
 More information can be found [Overview of Azure SQL Managed Instance management operations.](https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/management-operations-overview?view=azuresql)
@@ -24,10 +24,10 @@ More information can be found [Overview of Azure SQL Managed Instance management
 #### [Get up to 37% More SQL Server OLTP Performance by Selecting Premium Series Microsoft Azure SQL Managed Instance VMs With 3rd Gen Intel Xeon Scalable Processors](https://www.intel.com/content/www/us/en/content-details/755166/get-up-to-37-more-sql-server-oltp-performance-by-selecting-premium-series-microsoft-azure-sql-managed-instance-vms-with-3rd-gen-intel-xeon-scalable-processors.html)
 
 
-<img src="images\perfdata1.png" alt="Normalized 16 vCPU MS SQL NOPM" width="350"/>
+<img src="https://github.com/intel/terraform-intel-azure-mssql-managed-instance/blob/main/images/perfdata1.png" alt="Normalized 16 vCPU MS SQL NOPM" width="350"/>
 
 #
-<img src="images\perfdata2.png" alt="Normalized 8 vCPU MS SQL NOPM" width="350"/>
+<img src="https://github.com/intel/terraform-intel-azure-mssql-managed-instance/blob/main/images/perfdata2.png" alt="Normalized 8 vCPU MS SQL NOPM" width="350"/>
 
 
 

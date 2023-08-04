@@ -1,18 +1,3 @@
-data "azurerm_resource_group" "rg" {
-  name = "<ENTER_RESOURCE_GROUP_NAME>"
-}
-
-data "azurerm_virtual_network" "vnet" {
-  name                = "<ENTER_VIRTUAL_NETWORK_NAME>"
-  resource_group_name = "<ENTER_RESOURCE_GROUP_NAME>"
-}
-data "azurerm_subnet" "subnet" {
-  name                 = "default"
-  virtual_network_name = "<ENTER_VIRTUAL_NETWORK_NAME>"
-  resource_group_name  = "<ENTER_RESOURCE_GROUP_NAME>"
-  #enforce_private_link_endpoint_network_policies = true
-}
-
 module "optimized-mssql-managed-instance" {
   mi_name                      = "terraformtestingexample"
   source                       = "intel/azure-mssql-managed-instance/intel"

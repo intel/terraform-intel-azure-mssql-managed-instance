@@ -104,13 +104,13 @@ It is important to either create or associate a predefined a route table to a SQ
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~>3.41.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~>3.67 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~>3.41.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~>3.67 |
 
 ## Modules
 
@@ -140,7 +140,7 @@ No modules.
 | <a name="input_nsg_name"></a> [nsg\_name](#input\_nsg\_name) | The name of the network security group to be imported | `string` | n/a | yes |
 | <a name="input_sku_name"></a> [sku\_name](#input\_sku\_name) | The SKU that will be configured for the provisioned virtual machine. Possible values are GP\_Gen4, GP\_Gen5, GP\_Gen8IM, GP\_Gen8IH, BC\_Gen4, BC\_Gen5, BC\_Gen8IM or BC\_Gen8IH | `string` | `"GP_Gen5"` | no |
 | <a name="input_storage_size_in_gb"></a> [storage\_size\_in\_gb](#input\_storage\_size\_in\_gb) | The maximum size of storage to be configured on the virtual machine. This should be a multiple of 32 GB | `number` | `256` | no |
-| <a name="input_tags"></a> [tags](#input\_tags) | A mapping of tags to assign to the resource | `map(any)` | <pre>{<br>  "duration": "4",<br>  "owner": "owner@company.com"<br>}</pre> | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | A mapping of tags to assign to the resource | `map(any)` | `{}` | no |
 | <a name="input_vcore_count"></a> [vcore\_count](#input\_vcore\_count) | Number of cores that should be assigned to the SQL Managed Instance. Values can be 8, 16, or 24 for Gen4 SKUs, or 4, 8, 16, 24, 32, 40, 64, or 80 for Gen5 SKUs. | `number` | `8` | no |
 
 ## Outputs

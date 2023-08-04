@@ -60,7 +60,7 @@ main.tf
 ```hcl
 module "optimized-mssql-managed-instance" {
   name                         = "terraformtestingexample"
-  source                       = "../../"
+  source                       = "intel/azure-mssql-managed-instance/intel"
   administrator_login_password = var.administrator_login_password
   resource_group_name          = "resource_group_example"
   license_type                 = "BasePrice"

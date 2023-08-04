@@ -10,7 +10,7 @@
 variable "sku_name" {
   description = "The SKU that will be configured for the provisioned virtual machine. Possible values are GP_Gen4, GP_Gen5, GP_Gen8IM, GP_Gen8IH, BC_Gen4, BC_Gen5, BC_Gen8IM or BC_Gen8IH"
   type        = string
-  default     = "GP_Gen5"
+  default     = "GP_Gen8IH"
 }
 
 variable "storage_size_in_gb" {

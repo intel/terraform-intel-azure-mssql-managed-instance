@@ -15,7 +15,7 @@ The code selects premium Series - memory optimized Gen5 based on the Intel(R) Xe
 This module uses a predefined resource group, virtual network, subnet, and network security group. 
 
 ## Important Notice
-<img src="./images\important_notice_mssql_managed_instance.png?raw=true" alt="Important Notice" width="600">
+<img src="https://github.com/intel/terraform-intel-azure-mssql-managed-instance/blob/main/images/important_notice_mssql_managed_instance.png?raw=true" alt="Important Notice" width="600">
 
 ## **Provisioning an Azure MSSQL Managed Instance can take up to 6 hours!**
 More information can be found [Overview of Azure SQL Managed Instance management operations.](https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/management-operations-overview?view=azuresql)

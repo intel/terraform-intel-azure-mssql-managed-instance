@@ -2,15 +2,15 @@
 ####     Intel      ####
 ########################
 # See policies.md, we recommend  Intel Xeon 3rd Generation Scalable processors (code-named Ice Lake)
-# General Purpose: Gen5_v4, Gen5_v8, Gen5_v16, Gen5_v16, Gen5_v24, Gen5_v32, Gen5_v40, Gen5_v64, Gen5_v80, G8IM_v4, G8IM_v8, G8IM_v16, G8IM_v24, G8IM_v32, G8IM_v40, G8IM_v64, G8IM_v80, G8IH_v4, G8IH_v4, G8IH_v8, G8IH_v16, G8IH_v24, G8IH_v32, G8IH_v40, G8IH_v64
-# Memory Optimized: Gen5_v4, Gen5_v8, Gen5_v16, Gen5_v16, Gen5_v24, Gen5_v32, Gen5_v40, Gen5_v64, Gen5_v80, G8IM_v4, G8IM_v8, G8IM_v16, G8IM_v24, G8IM_v32, G8IM_v40, G8IM_v64, G8IM_v80, G8IH_v4, G8IH_v4, G8IH_v8, G8IH_v16, G8IH_v24, G8IH_v32, G8IH_v40, G8IH_v64
+# General Purpose: GP_G8IM_v4, GP_G8IM_v8, GP_G8IM_v16, GP_G8IM_v24, GP_G8IM_v32, GP_G8IM_v40, GP_G8IM_v64, GP_G8IM_v80
+# Memory Optimized: BP_G8IM_v4, BP_G8IM_v8, BP_G8IM_v16, BP_G8IM_v24, BP_G8IM_v32, BP_G8IM_v40, BP_G8IM_v64, BP_G8IM_v80
 # See more:
 # https://learn.microsoft.com/en-us/azure/azure-sql/database/service-tiers-sql-database-vcore?view=azuresql-db
 # https://azure.microsoft.com/en-us/pricing/details/azure-sql-managed-instance/single/
 variable "sku_name" {
   description = "The SKU that will be configured for the provisioned virtual machine. Possible values are GP_Gen4, GP_Gen5, GP_Gen8IM, GP_Gen8IH, BC_Gen4, BC_Gen5, BC_Gen8IM or BC_Gen8IH"
   type        = string
-  default     = "GP_Gen5"
+  default     = "GP_Gen8IH"
 }
 
 variable "storage_size_in_gb" {

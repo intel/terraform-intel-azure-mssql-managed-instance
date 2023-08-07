@@ -14,7 +14,7 @@ The instance is pre-configured with parameters within the database parameter gro
 This module uses a predefined resource group, virtual network, subnet, and network security group. 
 
 ## Important Notice
-<img src="./images\important_notice_mssql_managed_instance.png?raw=true" alt="Important Notice" width="600"/>
+<img src="https://github.com/intel/terraform-intel-azure-mssql-managed-instance/blob/main/images/important_notice_mssql_managed_instance.png?raw=true" alt="Important Notice" width="600"/>
 
 ## **Provisioning an Azure MSSQL Managed Instance can take up to 6 hours!**
 More information can be found [Overview of Azure SQL Managed Instance management operations.](https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/management-operations-overview?view=azuresql)
@@ -23,14 +23,9 @@ More information can be found [Overview of Azure SQL Managed Instance management
 
 #### [Get up to 37% More SQL Server OLTP Performance by Selecting Premium Series Microsoft Azure SQL Managed Instance VMs With 3rd Gen Intel Xeon Scalable Processors](https://www.intel.com/content/www/us/en/content-details/755166/get-up-to-37-more-sql-server-oltp-performance-by-selecting-premium-series-microsoft-azure-sql-managed-instance-vms-with-3rd-gen-intel-xeon-scalable-processors.html)
 
-
-<img src="images\perfdata1.png" alt="Normalized 16 vCPU MS SQL NOPM" width="350"/>
-
+<img src="https://github.com/intel/terraform-intel-azure-mssql-managed-instance/blob/main/images/perfdata1.png" alt="Normalized 16 vCPU MS SQL NOPM" width="350"/>
 #
-<img src="images\perfdata2.png" alt="Normalized 8 vCPU MS SQL NOPM" width="350"/>
-
-
-
+<img src="https://github.com/intel/terraform-intel-azure-mssql-managed-instance/blob/main/images/perfdata2.png" alt="Normalized 8 vCPU MS SQL NOPM" width="350"/>
 
 
 ## Usage
@@ -60,7 +55,7 @@ main.tf
 ```hcl
 module "optimized-mssql-managed-instance" {
   name                         = "terraformtestingexample"
-  source                       = "../../"
+  source                       = "intel/azure-mssql-managed-instance/intel"
   administrator_login_password = var.administrator_login_password
   resource_group_name          = "resource_group_example"
   license_type                 = "BasePrice"
@@ -94,6 +89,7 @@ It is important to choose the sku types and vcore options based off of the Terra
 
 
 It is important to either create or associate a predefined a route table to a SQL managed instance subnet that will be associated with the network security group. More details can be found here: https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/vnet-existing-add-subnet?view=azuresql
+
 
 
 
@@ -138,7 +134,7 @@ No modules.
 | <a name="input_license_type"></a> [license\_type](#input\_license\_type) | What type of license the managed instance will use. Possible values are LicenseIncluded and BasePrice | `string` | `"LicenseIncluded"` | no |
 | <a name="input_mi_name"></a> [mi\_name](#input\_mi\_name) | The name of the managed instance to be created | `string` | n/a | yes |
 | <a name="input_nsg_name"></a> [nsg\_name](#input\_nsg\_name) | The name of the network security group to be imported | `string` | n/a | yes |
-| <a name="input_sku_name"></a> [sku\_name](#input\_sku\_name) | The SKU that will be configured for the provisioned virtual machine. Possible values are GP\_Gen4, GP\_Gen5, GP\_Gen8IM, GP\_Gen8IH, BC\_Gen4, BC\_Gen5, BC\_Gen8IM or BC\_Gen8IH | `string` | `"GP_Gen5"` | no |
+| <a name="input_sku_name"></a> [sku\_name](#input\_sku\_name) | The SKU that will be configured for the provisioned virtual machine. Possible values are GP\_Gen4, GP\_Gen5, GP\_Gen8IM, GP\_Gen8IH, BC\_Gen4, BC\_Gen5, BC\_Gen8IM or BC\_Gen8IH | `string` | `"GP_Gen8IH"` | no |
 | <a name="input_storage_size_in_gb"></a> [storage\_size\_in\_gb](#input\_storage\_size\_in\_gb) | The maximum size of storage to be configured on the virtual machine. This should be a multiple of 32 GB | `number` | `256` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A mapping of tags to assign to the resource | `map(any)` | `{}` | no |
 | <a name="input_vcore_count"></a> [vcore\_count](#input\_vcore\_count) | Number of cores that should be assigned to the SQL Managed Instance. Values can be 8, 16, or 24 for Gen4 SKUs, or 4, 8, 16, 24, 32, 40, 64, or 80 for Gen5 SKUs. | `number` | `8` | no |

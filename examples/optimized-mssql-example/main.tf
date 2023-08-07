@@ -7,7 +7,7 @@ module "optimized-mssql-managed-instance" {
   administrator_login_password = var.administrator_login_password
   administrator_login          = "sqladmin"
   license_type                 = "BasePrice"
-  vcore_count                  = 4
+  vcore_count                  = 8
   sku_name                     = "GP_Gen8IH"
   storage_size_in_gb           = 32
   tags = {

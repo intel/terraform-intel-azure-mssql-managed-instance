@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./images/logo-classicblue-800px.png" alt="Intel Logo" width="250"/>
+  <img src="https://github.com/intel/terraform-intel-azure-mssql-managed-instance/blob/main/images/logo-classicblue-800px.png?raw=true" alt="Intel Logo" width="250"/>
 </p>
 
 # Intel® Cloud Optimization Modules for Terraform  
@@ -37,4 +37,5 @@ BP_G8IM_v4, BP_G8IM_v8, BP_G8IM_v16, BP_G8IM_v24, BP_G8IM_v32, BP_G8IM_v40, BP_G
 
 General Purpose Premium Series Memory Optimized:Intel Ice Lake
 BP_G8IH_v4, BP_G8IH_v4, BP_G8IH_v8, BP_G8IH_v16, BP_G8IH_v24, BP_G8IH_v32, BP_G8IH_v40, BP_G8IH_v64
+
 

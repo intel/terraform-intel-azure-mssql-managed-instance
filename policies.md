@@ -12,13 +12,11 @@ This file documents the HashiCorp Sentinel policies that apply to this module
 
 ## Policy 1
 
-Description: **Add the description of the policy. This will be removed !**
+Description: Intel Xeon 3rd Generation Scalable processors (code-named Ice Lake) should be used
 
-Resource type:  **Add the resource type of the policy. This will be removed !**
+Resource type:  mssql-managed-instance
 
-Parameter:  **Add the Parameter. This will be removed !**
-
-Allowed Types :  **Add allowed resource types of the policy. This will be removed !**
+Parameter:  sku_name
 
 General Purpose: Broadwell, Skylake, Cascade, Ice Lake
 GP_Gen5_v4, GP_Gen5_v8, GP_Gen5_v16, GP_Gen5_v24, GP_Gen5_v32, GP_Gen5_v40, GP_Gen5_v64, GP_Gen5_v80

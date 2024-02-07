@@ -3,9 +3,9 @@
 </p>
 
 
-# Intel® Cloud Optimization Modules for Terraform
+# Intel® Optimized Cloud Modules for Terraform
 
-© Copyright 2022, Intel Corporation
+© Copyright 2024, Intel Corporation
 
 ## Azure MSSQL Intel Optimized Managed Instance 
 The example deploys an Intel Optimized Azure MSSQL Managed Instance. Instance Selection and Intel Optimizations have been defaulted in the code.

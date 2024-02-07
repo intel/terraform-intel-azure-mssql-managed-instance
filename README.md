@@ -2,9 +2,9 @@
   <img src="https://github.com/intel/terraform-intel-azure-mssql-managed-instance/blob/main/images/logo-classicblue-800px.png?raw=true" alt="Intel Logo" width="250"/>
 </p>
 
-# Intel® Cloud Optimization Modules for Terraform
+# Intel® Optimized Cloud Modules for Terraform
 
-© Copyright 2023, Intel Corporation
+© Copyright 2024, Intel Corporation
 
 ## Azure MSSQL Managed Instance Module
 The example creates an Intel Optimized Azure MSSQL Managed Instance. Instance Selection and Intel Optimizations have been defaulted in the code. This instance is created on Intel's Xeon Scalable 2.8 GHz processor (Ice Lake) Premium Series Gen5 processor. 
@@ -100,13 +100,13 @@ It is important to either create or associate a predefined a route table to a SQ
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~>3.67 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~>3.86 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~>3.67 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~>3.86 |
 
 ## Modules
 

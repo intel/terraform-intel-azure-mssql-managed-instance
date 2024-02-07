@@ -100,13 +100,13 @@ It is important to either create or associate a predefined a route table to a SQ
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~>3.67 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~>3.86 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~>3.67 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~>3.86 |
 
 ## Modules
 

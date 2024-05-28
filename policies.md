@@ -2,38 +2,22 @@
   <img src="https://github.com/intel/terraform-intel-azure-mssql-managed-instance/blob/main/images/logo-classicblue-800px.png?raw=true" alt="Intel Logo" width="250"/>
 </p>
 
-# Intel® Cloud Optimization Modules for Terraform  
+# Intel® Optimized Cloud Modules for Terraform  
 
-© Copyright 2022, Intel Corporation
+© Copyright 2024, Intel Corporation
 
 ## HashiCorp Sentinel Policies
 
-This file documents the HashiCorp Sentinel policies that apply to this module
+<b>What are Sentinel Policies?</b>
 
-## Policy 1
+HashiCorp Sentinel is a policy as code framework that can be used to enforce policies and standards across an organization's infrastructure. It allows organizations to define rules for their infrastructure using a high-level language, and integrates with a variety of HashiCorp tools, including Terraform and Vault. Sentinel policies are defined using the Sentinel language, and can be used to enforce rules such as compliance requirements, security best practices, and cost optimization. Sentinel policies can be implemented at different stages of the infrastructure development lifecycle, deployment, and runtime.
 
-Description: Intel Xeon 3rd Generation Scalable processors (code-named Ice Lake) should be used
+## Intel's Sentinel Policy Structure
 
-Resource type:  mssql-managed-instance
+Reference the `intel-policy-library` [README.md](https://github.com/intel/intel-policy-library/blob/main/README.md#getting-started) for details on how to get started using our policies.
 
-Parameter:  sku_name
+Intel® provides a list of `optimal` instance types per cloud resource, selected to deliver the best possible performance, security, and cost-efficiency for your cloud workloads. What sets this library apart is its dynamic nature; it is designed to automatically update, informing developers whenever more suitable hardware becomes available within their cloud environment, enabling them to make timely and informed decisions.
 
-General Purpose: Broadwell, Skylake, Cascade, Ice Lake
-GP_Gen5_v4, GP_Gen5_v8, GP_Gen5_v16, GP_Gen5_v24, GP_Gen5_v32, GP_Gen5_v40, GP_Gen5_v64, GP_Gen5_v80
- 
-General Purpose Premium Series: Intel Ice Lake
-GP_G8IM_v4, GP_G8IM_v8, GP_G8IM_v16, GP_G8IM_v24, GP_G8IM_v32, GP_G8IM_v40, GP_G8IM_v64, GP_G8IM_v80
-
-General Purpose Premium Series Memory Optimized:
-GP_G8IH_v4, GP_G8IH_v8, GP_G8IH_v16, GP_G8IH_v24, GP_G8IH_v32, GP_G8IH_v40, GP_G8IH_v64, GP_G8IH_v80
- 
-Business Critical:Broadwell, Skylake, Cascade, Ice Lake
-BP_Gen5_v4, BP_Gen5_v8, BP_Gen5_v16, BP_Gen5_v16, BP_Gen5_v24, BP_Gen5_v32, BP_Gen5_v40, BP_Gen5_v64, BP_Gen5_v80, 
-
-General Purpose Premium Series: Intel Ice Lake
-BP_G8IM_v4, BP_G8IM_v8, BP_G8IM_v16, BP_G8IM_v24, BP_G8IM_v32, BP_G8IM_v40, BP_G8IM_v64, BP_G8IM_v80,
-
-General Purpose Premium Series Memory Optimized:Intel Ice Lake
-BP_G8IH_v4, BP_G8IH_v4, BP_G8IH_v8, BP_G8IH_v16, BP_G8IH_v24, BP_G8IH_v32, BP_G8IH_v40, BP_G8IH_v64
+This library also contains `recommended` instance types for AI and Confidential Computing workloads. For more information regarding Intel's AI and Confidential Computing capabilities and policies see the Intel® Xeon® Scalable Processors and Intel® Advanced Matrix Extensions (AMX) and Intel® Xeon® Scalable Processors and Confidential Computing sections in the [intel-policy-library](https://github.com/intel/intel-policy-library)
 
 

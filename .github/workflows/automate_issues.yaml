@@ -1,4 +1,6 @@
 name: Add Issue to Project automatically 
+permissions: read-all
+
 on:
   issues:
     types: [opened]

@@ -51,7 +51,12 @@ variable "administrator_login_password" {
 }
 
 variable "azurerm_resource_group_name" {
-  description = "Name of the resource group to be imported"
+  description = "Name of the resource group in which the instance needs to be deployed"
+  type        = string
+}
+
+variable "subnet_resource_group_name" {
+  description = "Name of resource group that contains the subnet in which the instance needs to be deployed"
   type        = string
 }
 
@@ -63,7 +68,6 @@ variable "azurerm_virtual_network_name" {
 variable "azurerm_subnet_name" {
   description = "The name of the preconfigured subnet"
   type        = string
-
 }
 
 variable "nsg_name" {
@@ -86,4 +90,21 @@ variable "tags" {
   type        = map(any)
   default = {
   }
+}
+
+variable "storage_account_type" {
+  description = "Storage account type to store backups"
+  default     = null
+}
+
+variable "identity_type" {
+  description = "Type of managed identity to set"
+  type        = string
+  default     = null
+}
+
+variable "user_assigned_identity_ids" {
+  description = "List of user-assigned managed identity IDs"
+  type        = list(string)
+  default     = []
 }

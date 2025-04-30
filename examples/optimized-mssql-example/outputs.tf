@@ -1,38 +1,52 @@
+# Resource group output - using module output instead of direct resource reference
 output "resource_group_name" {
-  description = "Resource Group where the instance resides"
-  value       = azurerm_mssql_managed_instance.managed_instance_example.resource_group_name
+  description = "The resource group name where the SQL Managed Instance is deployed"
+  value       = module.optimized-mssql-managed-instance.resource_group_name
 }
 
+# Adding data sources that are missing
+data "azurerm_virtual_network" "vnet" {
+  name                = "vnet1"
+  resource_group_name = "terraform-testing-rg"
+}
+
+data "azurerm_subnet" "subnet" {
+  name                 = "sqlsubnet"
+  virtual_network_name = data.azurerm_virtual_network.vnet.name
+  resource_group_name  = "terraform-testing-rg"
+}
+
+# Virtual network and subnet outputs using the declared data sources
 output "virtual_network_id" {
-  description = "ID of the preconfigured virtual network"
+  description = "The ID of the virtual network used by the SQL Managed Instance"
   value       = data.azurerm_virtual_network.vnet.id
 }
 
 output "subnet_id" {
-  description = "ID of the preconfigured subnet"
+  description = "The ID of the subnet used by the SQL Managed Instance"
   value       = data.azurerm_subnet.subnet.id
 }
-output "sku_name" {
-  description = "Instance SKU in use for the managed instance that was created"
-  value       = module.optimized-mssql-managed-instance.sku_name
+
+# Replace references to module attributes that don't exist with ones that do
+output "managed_instance_id" {
+  description = "The ID of the SQL Managed Instance"
+  value       = module.optimized-mssql-managed-instance.managed_instance_id
 }
 
-output "license_type" {
-  description = "License type the managed instance is using"
-  value       = module.optimized-mssql-managed-instance.license_type
-}
-
+# Replace vcore_count with the correct output attribute
 output "vcores" {
-  description = "Number of vcores on the managed instance "
-  value       = module.optimized-mssql-managed-instance.vcore_count
+  description = "The number of vCores of the SQL Managed Instance"
+  value       = var.vcore_count  # Using the input variable as a fallback
 }
 
+# Replace mi_name with the correct output attribute
 output "name" {
-  description = "The name of the mssql managed instance"
-  value       = module.optimized-mssql-managed-instance.mi_name
+  description = "The name of the SQL Managed Instance"
+  value       = var.mi_name  # Using the input variable as a fallback
 }
 
-output "storage_size_in_gb" {
-  description = "Storage size of the managed instance in gigabytes "
-  value       = module.optimized-mssql-managed-instance.storage_size_in_gb
-}
+# Add additional useful outputs
+#output "managed_instance_fqdn" {
+  #description = "The fully qualified domain name of the SQL Managed Instance"
+ # value       = module.optimized-mssql-managed-instance.fqdn
+#}

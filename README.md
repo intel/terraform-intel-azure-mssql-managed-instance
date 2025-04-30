@@ -13,11 +13,9 @@ The instance is pre-configured with parameters within the database parameter gro
 
 This module uses a predefined resource group, virtual network, subnet, and network security group. 
 
-Critical: Network Configuration must bet pre-configured:
-
-Use dedicated subnet with delegation to Microsoft.Sql/managedInstances
-
-Subnet should be /27 or larger (minimum 32 IP addresses) with route table, network security group is required for subnet, for all requirements see: https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/connectivity-architecture-overview?view=azuresql#network-requirements
+**Critical: Network Configuration must bet pre-configured:**
+--Use dedicated subnet with delegation to Microsoft.Sql/managedInstances
+--Subnet should be /27 or larger (minimum 32 IP addresses) with route table, network security group is required for subnet, for all requirements see: https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/connectivity-architecture-overview?view=azuresql#network-requirements
 
 <p align="center">
 <img src="https://github.com/intel/terraform-intel-azure-mssql-managed-instance/blob/main/images/requirements.png?raw=true" alt="Important Notice" width="600">

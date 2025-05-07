@@ -4,19 +4,19 @@ data "azurerm_resource_group" "rg" {
 
 data "azurerm_virtual_network" "vnet" {
   name                = var.azurerm_virtual_network_name
-  resource_group_name = var.azurerm_resource_group_name
+  resource_group_name = var.azurerm_subnet_resource_group_name #user requested to specify the subnet resource group
 }
 
 data "azurerm_subnet" "subnet" {
   name                 = var.azurerm_subnet_name
   virtual_network_name = data.azurerm_virtual_network.vnet.name
-  resource_group_name  = var.azurerm_resource_group_name
+  resource_group_name  = var.azurerm_subnet_resource_group_name #user requested to specify the subnet resource group
 }
 
-data "azurerm_network_security_group" "nsg" {
-  name                = var.nsg_name
-  resource_group_name = data.azurerm_resource_group.rg.name
-}
+#data "azurerm_network_security_group" "nsg" {
+#  name                = var.nsg_name
+#  resource_group_name = data.azurerm_resource_group.rg.name
+#}
 
 resource "azurerm_mssql_managed_instance" "mssql_managed_instance" {
   name                         = var.mi_name
@@ -29,8 +29,15 @@ resource "azurerm_mssql_managed_instance" "mssql_managed_instance" {
   vcores                       = var.vcore_count
   license_type                 = var.license_type
   subnet_id                    = data.azurerm_subnet.subnet.id
-  tags                         = var.tags
+  ## user requested section
+  storage_account_type         = var.storage_account_type
+  identity {
+    type         = var.identity_type
+    identity_ids = var.identity_type == "UserAssigned" ? var.user_assigned_identity_ids : []
+  }
+  ## end user requested section
 
+  tags                         = var.tags
   timeouts {
     create = "6h"
     delete = "1h"

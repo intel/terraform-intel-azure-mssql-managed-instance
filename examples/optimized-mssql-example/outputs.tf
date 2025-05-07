@@ -4,17 +4,6 @@ output "resource_group_name" {
   value       = module.optimized-mssql-managed-instance.resource_group_name
 }
 
-# Adding data sources that are missing
-data "azurerm_virtual_network" "vnet" {
-  name                = "vnet1"
-  resource_group_name = "terraform-testing-rg"
-}
-
-data "azurerm_subnet" "subnet" {
-  name                 = "sqlsubnet"
-  virtual_network_name = data.azurerm_virtual_network.vnet.name
-  resource_group_name  = "terraform-testing-rg"
-}
 
 # Virtual network and subnet outputs using the declared data sources
 output "virtual_network_id" {
@@ -50,3 +39,4 @@ output "name" {
   #description = "The fully qualified domain name of the SQL Managed Instance"
  # value       = module.optimized-mssql-managed-instance.fqdn
 #}
+

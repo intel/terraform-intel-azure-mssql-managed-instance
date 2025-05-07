@@ -8,10 +8,10 @@ output "virtual_network_id" {
   value       = data.azurerm_virtual_network.vnet.id
 }
 
-output "network_security_group_id" {
-  description = "The ID of the preconfigured virtual network"
-  value       = data.azurerm_network_security_group.nsg.id
-}
+#output "network_security_group_id" {
+#  description = "The ID of the preconfigured virtual network"
+#  value       = data.azurerm_network_security_group.nsg.id
+#}
 
 output "subnet_id" {
   description = "The ID of the preconfigured subnet"

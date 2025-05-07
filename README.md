@@ -4,7 +4,7 @@
 
 # Intel® Optimized Cloud Modules for Terraform
 
-© Copyright 2024, Intel Corporation
+© Copyright 2025, Intel Corporation
 
 ## Azure MSSQL Managed Instance Module
 The example creates an Intel Optimized Azure MSSQL Managed Instance. Instance Selection and Intel Optimizations have been defaulted in the code. This instance is created on Intel's Xeon Scalable 2.8 GHz processor (Ice Lake) Premium Series Gen5 processor. 

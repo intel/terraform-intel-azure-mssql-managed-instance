@@ -12,9 +12,8 @@ data "azurerm_subnet" "subnet" {
 ## NOTE: For the module below, please see ther variables.tf file for the required variables ##
 module "optimized-mssql-managed-instance" {
   mi_name                      = var.mi_name
-  #source                       = "intel/azure-mssql-managed-instance/intel"
-  source                       = "../.." # Use local path for testing purposes
- 
+  source                       = "intel/azure-mssql-managed-instance/intel"
+   
   azurerm_virtual_network_name         =  var.azurerm_virtual_network_name
   azurerm_resource_group_name          =  var.azurerm_resource_group_name
   azurerm_subnet_resource_group_name   =  var.azurerm_subnet_resource_group_name 

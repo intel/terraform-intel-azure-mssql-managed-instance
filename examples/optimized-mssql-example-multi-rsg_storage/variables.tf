@@ -43,7 +43,7 @@ variable "azurerm_subnet_resource_group_name" {
 
 variable "azurerm_subnet_name" {
   description = "Name of the subnet designated for SQL Managed Instance deployment"
-  type        = string
+  type        = str ing
   default     = "sqlsubnet" # Replace with actual SQL Managed Instance delegated subnet name
 }
 

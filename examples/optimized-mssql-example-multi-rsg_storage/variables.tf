@@ -17,18 +17,6 @@ variable "mi_name" {
   default     = "terraformtestingexample" # Replace with actual name of the SQL Managed Instance
 }
 
-variable "storage_account_name" {
-  description = "The name of the Storage Account to be created"
-  type        = string
-  default     = "terratstoract10101" # Replace with actual name of the SQL Managed Instance
-}
-
-variable "azurerm_storage_container" {
-  description = "The name of the Storage Containber to be created"
-  type        = string
-  default     = "accteststorcont101" # Replace with actual name of the SQL Managed Instance
-}
-
 variable "vcore_count" {
   description = "The number of vCores for the SQL Managed Instance"
   type        = number
@@ -55,7 +43,7 @@ variable "azurerm_subnet_resource_group_name" {
 
 variable "azurerm_subnet_name" {
   description = "Name of the subnet designated for SQL Managed Instance deployment"
-  type        = string
+  type        = str ing
   default     = "sqlsubnet" # Replace with actual SQL Managed Instance delegated subnet name
 }
 

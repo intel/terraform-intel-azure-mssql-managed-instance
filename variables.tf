@@ -49,11 +49,17 @@ variable "administrator_login_password" {
     error_message = "The administrator_login_password value must be at least 8 characters in length"
   }
 }
-
+## User requested change to allow user to specify subnet resource group
 variable "azurerm_resource_group_name" {
-  description = "Name of the resource group to be imported"
+  description = "Name of the resource group in which the instance needs to be deployed"
   type        = string
 }
+
+variable "azurerm_subnet_resource_group_name" {
+  description = "Name of resource group that contains the subnet in which the instance needs to be deployed"
+  type        = string
+}
+## End user requested change to allow user to specify subnet resource group
 
 variable "azurerm_virtual_network_name" {
   description = "Name of the preconfigured virtual network"
@@ -63,18 +69,35 @@ variable "azurerm_virtual_network_name" {
 variable "azurerm_subnet_name" {
   description = "The name of the preconfigured subnet"
   type        = string
-
-}
-
-variable "nsg_name" {
-  description = "The name of the network security group to be imported"
-  type        = string
 }
 
 variable "mi_name" {
   description = "The name of the managed instance to be created"
   type        = string
 }
+
+## User requested section to allow user to specify storage account type and identity type
+variable "storage_account_type" {
+  description = "Storage account type to store backups"
+  default     = null
+}
+
+variable "identity_type" {
+  description = "Type of managed identity to set. Possible values are 'SystemAssigned', 'UserAssigned', 'SystemAssigned, UserAssigned' or 'None'"
+  type        = string
+  default     = "SystemAssigned"
+  validation {
+    condition     = contains(["SystemAssigned", "UserAssigned", "SystemAssigned, UserAssigned", "None"], var.identity_type)
+    error_message = "The identity_type must be one of 'SystemAssigned', 'UserAssigned', 'SystemAssigned, UserAssigned' or 'None'."
+  }
+}
+
+variable "user_assigned_identity_ids" {
+  description = "List of user-assigned managed identity IDs to be assigned to the SQL Managed Instance"
+  type        = list(string)
+  default     = []
+}
+## End user requested section to allow user to specify storage account type and identity type
 
 ########################
 ####     Other      ####
